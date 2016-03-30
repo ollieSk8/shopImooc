@@ -19,6 +19,12 @@
 }
 </style>
 <body>
+<div class="alert alert-success" role="alert" style="display:none;">
+  删除管理员成功！
+</div>
+<div class="alert alert-danger" role="alert" style="display:none;">
+  删除管理员失败！请重试!
+</div>
 <div class="panel panel-default">
   <div class="panel-heading">管理员列表</div>
   <div class="panel-body">
@@ -32,17 +38,17 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($rows as $rows):?>
+        <?php $i=1;foreach ($rows as $rows):?>
           <tr>
-            <th scope="row"><?php echo $rows["id"]?></th>
+            <th scope="row"><?php echo $i;?></th>
             <td><?php echo $rows["username"]?></td>
             <td><?php echo $rows["email"]?></td>
             <td>
               <button type="button" class="btn btn-primary btn-sm" onclick="editAdmin(<?php echo $rows["id"]?>)">修改</button>
-              <button type="button" class="btn btn-primary btn-sm">删除</button>
+              <button type="button" class="btn btn-primary btn-sm" data-username="<?php echo $rows["username"]?>" id="<?php echo 'delete_btn_'.$rows["id"]?>" onclick="delAdmin(<?php echo $rows["id"]?>)">删除</button>
             </td>
           </tr>
-        <?php endforeach;?>
+        <?php $i++;endforeach;?>
       </tbody>
     </table>
   </div>

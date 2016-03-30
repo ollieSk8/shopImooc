@@ -1,9 +1,6 @@
-function editAdmin(id){
-	window.ID=id
-	window.location.href='editAdmin.php?id='+id;
-}
 (function(){
 	$(function(){
+		//编辑管理员表单提交
 		$("#editAdmin-from").validate({
 			rules: {
 				adminUserName: {
@@ -55,6 +52,37 @@ function editAdmin(id){
 					}
 				});
 			}
-		});	
+		});
+		function editAdmin(id){
+			window.location.href='editAdmin.php?id='+id;
+		}
+		function delAdmin(id){
+			var msg='你确认删除'+$('#delete_btn_'+id).attr('data-username')+'管理员么？';
+			if(confirm(msg)){
+				$.ajax({
+					url:'doAdminAction.php?act=delAdmin&id='+id,
+					type:'post',
+					dataType:'json',
+					success:function(data){
+						if(data.code==1){
+							$('.alert-success').show();
+							$('#delete_btn_'+id).parent().parent().remove();
+							setTimeout(function(){
+								$('.alert-success').hide();
+							},3000);
+						}
+					},
+					error:function(err){
+						//console.log('删除失败');
+						$('.alert-danger').show();
+						setTimeout(function(){
+							window.location.href='listAdmin.php';
+						},3000);
+					}
+				});
+			}
+		}
+		window.editAdmin=editAdmin;
+		window.delAdmin=delAdmin;
 	});
 })();

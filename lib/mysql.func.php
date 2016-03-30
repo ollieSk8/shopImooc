@@ -34,7 +34,7 @@
 		}
 	};
 	//记录删除
-	function delete($table,$array,$where=null){
+	function delete($table,$where=null){
 		$where=$where==null?null:"where ".$where;
 		$sql="delete from {$table} {$where}";
 		mysql_query($sql);

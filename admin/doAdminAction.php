@@ -12,6 +12,7 @@ if($act=="logout"){
 	$id=$_REQUEST['id'];
 	$mes=editAdmin($id);
 }elseif($act=="delAdmin"){
+	$id=$_REQUEST['id'];
 	$mes=delAdmin($id);
 }elseif($act=="addCate"){
 	$mes=addCate();

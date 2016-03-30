@@ -41,6 +41,13 @@
 			echoJson($data=array(),$code=1,$info="修改成功！");
 		}
 	}
+	//删除管理员
+	function delAdmin($id){
+		$queryId=delete("imooc_admin","id={$id}");
+		if($queryId){
+			echoJson($data=array(),$code=1,$info="删除成功！");
+		}
+	}
 	//得到管理员
 	function getAllAdmin(){
 		$sql="select id,username,email from imooc_admin";
