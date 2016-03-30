@@ -1,0 +1,59 @@
+.admin-section{
+	width:700px;
+	margin:40px auto 0;
+}
+.admin-nav{
+	background-color:#337ab7;
+	width:100%;
+	border-radius:0;
+	margin-bottom:0;
+	border:0;
+}
+.admin-nav .navbar-text{
+	color:#fff;
+	text-align: center;
+	float: none;
+	font-size:16px;
+	font-weight:bold;
+}
+#verificationCode{
+	width:200px;float:left;
+}
+.verificationCode-img{
+	width:100px;
+	height:34px;
+	float:left;
+	margin-left:20px;
+}
+.breadcrumb{
+	margin-bottom: 0;
+}
+.glyphicon{
+	margin-right:5px;
+}
+.admin-left{
+	padding-left:0;
+	padding-right:0;
+}
+.admin-right{
+	padding-left:0;
+	padding-right:0;
+}
+.panel{
+	border-radius:0;
+}
+.panel-heading{
+	border-radius:0;
+}
+.panel-body{padding:0;}
+.list-group-item{border:none;padding-bottom:0;cursor:pointer;}
+.second-menu{margin-bottom:0;display:none;}
+.second-menu  li a{font-size:12px;text-indent:1em;display:block;}
+.menu-left{
+	padding:0;padding-bottom:9999px;margin-bottom:-9999px;overflow:hidden;position:relative;
+	border-right:1px solid #ccc;background-color:#f5f5f5;
+}
+.menu-left .list-group-item{background:none;}
+.menu-left .panel{border:none;background: none;box-shadow:none;}
+.menu-right .panel{border:none;background: none;box-shadow:none;}
+.menu-right .panel-body{padding:15px;}
