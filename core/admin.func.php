@@ -26,7 +26,22 @@
 			echoJson($data=array(),$code=1,$info="添加成功！");
 		}
 	}
-	//添加管理员
+	//修改管理员
+	function editAdmin($id){
+		$adminUserName=$_POST["adminUserName"];
+		$adminUserPass=md5($_POST["adminUserPass"]);
+		$adminEmail=$_POST["adminEmail"];
+		$arr=array(
+			"username" => $adminUserName,
+			"password"=> $adminUserPass,
+			"email"=>$adminEmail
+		);
+		$queryId=update("imooc_admin",$arr,"id={$id}");
+		if($queryId){
+			echoJson($data=array(),$code=1,$info="修改成功！");
+		}
+	}
+	//得到管理员
 	function getAllAdmin(){
 		$sql="select id,username,email from imooc_admin";
 		$rows=fetch_all($sql);

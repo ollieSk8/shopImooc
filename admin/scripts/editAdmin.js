@@ -1,4 +1,5 @@
 function editAdmin(id){
+	window.ID=id
 	window.location.href='editAdmin.php?id='+id;
 }
 (function(){
@@ -32,16 +33,17 @@ function editAdmin(id){
 			submitHandler: function() {
 				   var editAdmin_obj=$("#editAdmin-from").serialize();
 				   $.ajax({
-					url:'doAdminAction.php?act=editAdmin',
+					url:'doAdminAction.php?act=editAdmin&id='+$("#editAdmin-from").attr('data-id'),
 					type:'post',
 					dataType:'json',
 					data:editAdmin_obj,
 					success:function(data){
 						if(data.code==1){
 							$('.alert-success').show();
-							$("#editAdmin-from")[0].reset()
+							//$("#editAdmin-from")[0].reset()
 							setTimeout(function(){
 								$('.alert-success').hide();
+								window.location.href='listAdmin.php'
 							},3000);
 						}
 					},

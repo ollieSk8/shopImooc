@@ -23,15 +23,15 @@
 </style>
 <body>
 <div class="alert alert-success" role="alert" style="display:none;">
-  增加管理员成功！
+  修改管理员成功！
 </div>
 <div class="alert alert-danger" role="alert" style="display:none;">
-  增加管理员失败！请重试!
+  修改管理员失败！请重试!
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">修改管理员</div>
   <div class="panel-body">
-      <form id="editAdmin-from">
+      <form id="editAdmin-from" data-id="<?php echo $id?>">
          <div class="form-group">
           <label for="adminUserName">管理员名称</label>
           <input type="text" class="form-control" id="adminUserName" name="adminUserName" value="<?php echo $rows["username"]?>">

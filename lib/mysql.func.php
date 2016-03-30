@@ -16,8 +16,9 @@
 	};
 	//记录更新
 	function update($table,$array,$where=null){
+		$str="";
 		foreach($array as $key=>$val){
-			if($str=null){
+			if($str==""){
 				$sep="";
 			}else{
 				$sep=",";
@@ -25,8 +26,12 @@
 			$str.=$sep.$key."='".$val."'";
 		}
 		$sql="update {$table} set {$str} ".($where==null?null:"where ".$where);
-		mysql_query($sql);
-		return mysql_affected_rows();
+		$result=mysql_query($sql);
+		if($result){
+			return mysql_affected_rows();
+		}else{
+			return false;
+		}
 	};
 	//记录删除
 	function delete($table,$array,$where=null){
