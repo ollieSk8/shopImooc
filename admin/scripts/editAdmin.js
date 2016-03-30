@@ -73,7 +73,6 @@
 						}
 					},
 					error:function(err){
-						//console.log('删除失败');
 						$('.alert-danger').show();
 						setTimeout(function(){
 							window.location.href='listAdmin.php';

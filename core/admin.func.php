@@ -48,7 +48,7 @@
 			echoJson($data=array(),$code=1,$info="删除成功！");
 		}
 	}
-	//得到管理员
+	//得到所有管理员
 	function getAllAdmin(){
 		$sql="select id,username,email from imooc_admin";
 		$rows=fetch_all($sql);
