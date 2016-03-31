@@ -46,7 +46,8 @@
 	    }else{
 	    	echo "<li><a href=\"".$url."?page=".($reqNum-1)."\" aria-label=\"Previous\"><span>&laquo;</span></a></li>";
 	    }
-	    
+
+	    for($i=0;$i<)
 	          // <li class="disabled"><a href="http://www.baidu.com" aria-label="Previous"><span>&laquo;</span></a></li>
 	          // <li class="active"><span>1</span></li>
 	          // <li><a href="#">2</a></li>
