@@ -2,6 +2,7 @@
   require_once "../include.php";
     $arr=renderPagination("imooc_admin");
     $rows=$arr["rows"];
+    $html=$arr["pagination"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,8 +54,6 @@
       </tbody>
     </table>
     <?php
-      $arr=renderPagination("imooc_admin");
-      $html=$arr["pagination"];
       echo $html;
     ?>
   </div>
