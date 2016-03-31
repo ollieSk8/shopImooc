@@ -1,6 +1,7 @@
 <?php
   require_once "../include.php";
-  $rows=getAllAdmin();
+    $arr=renderPagination("imooc_admin");
+    $rows=$arr["rows"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,15 +52,11 @@
         <?php $i++;endforeach;?>
       </tbody>
     </table>
-    <nav>
-        <ul class="pagination">
-          <li class="disabled"><a href="http://www.baidu.com" aria-label="Previous"><span>&laquo;</span></a></li>
-          <li class="active"><span>1</span></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li class="disabled"><a href="#" aria-label="Next"><span>&raquo;</span></a></li>
-        </ul>
-    </nav>
+    <?php
+      $arr=renderPagination("imooc_admin");
+      $html=$arr["pagination"];
+      echo $html;
+    ?>
   </div>
 </div>
 

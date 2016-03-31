@@ -6,7 +6,7 @@
 		imagefilledrectangle($image,0,0,$width,$height,$white);
 		$chars=bulidRandomString($type,$length);
 		$_SESSION[$session_name]=strtolower($chars);
-		$fontfiles=array("msyh.ttf","msyhbd.ttf","simhei.ttf");
+		$fontfiles=array("msyhbd.ttf");
 		for($i=0;$i<$length;$i++){
 			$size=mt_rand(14,16);
 			$angle=mt_rand(-15,15);
