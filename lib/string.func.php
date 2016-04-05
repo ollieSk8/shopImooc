@@ -1,10 +1,4 @@
 <?php 
-/**
- * 生成验证码
- * @param int $type
- * @param int $length
- * @return string
- */
 function bulidRandomString($type=1,$length=4){
 	if ($type == 1) {
 		$chars = join ( "", range ( 0, 9 ) );

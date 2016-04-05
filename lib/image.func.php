@@ -23,6 +23,7 @@
 			imagesetpixel($image,mt_rand(0,$width),mt_rand(0,$height),$color);
 		}
 		header("content-type:image/gif");
+		ob_clean();
 		imagegif($image);
 		imagedestroy($image);
 	};

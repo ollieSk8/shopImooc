@@ -17,9 +17,10 @@ if($act=="logout"){
 }elseif($act=="addCate"){
 	$mes=addCate();
 }elseif($act=="editCate"){
-	$where="id={$id}";
-	$mes=editCate($where);
+	$id=$_REQUEST['id'];
+	$mes=editCate($id);
 }elseif($act=="delCate"){
+	$id=$_REQUEST['id'];
 	$mes=delCate($id);
 }elseif($act=="addPro"){
 	$mes=addPro();

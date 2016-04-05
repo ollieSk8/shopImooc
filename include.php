@@ -12,6 +12,6 @@
 	require_once "upload.func.php";
 	require_once "common.func.php";
 	require_once "admin.func.php";
-	
+	require_once "cate.func.php";
 
 ?>

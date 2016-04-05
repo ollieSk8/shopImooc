@@ -80,7 +80,7 @@
 					  	<span class="glyphicon glyphicon-plus"></span>管理员管理
 					  	<ul class="list-group second-menu">
 						  <li class="list-group-item">
-						  	<a href="addAdmin.php" target="mainFrame">管理员添加</a>
+						  	<a href="addAdmin.php" target="mainFrame">添加管理员</a>
 						  </li>
 						   <li class="list-group-item">
 						  	<a href="listAdmin.php" target="mainFrame">管理员列表</a>
@@ -88,13 +88,13 @@
 						</ul>
 					  </li>
 					  <li class="list-group-item" data-hover="hover">
-					  	<span class="glyphicon glyphicon-plus"></span>订单管理
+					  	<span class="glyphicon glyphicon-plus"></span>分类管理
 					  	<ul class="list-group second-menu">
 						  <li class="list-group-item">
-						  	<a href="#">订单修改</a>
+						  	<a href="addCate.php" target="mainFrame">添加分类</a>
 						  </li>
 						   <li class="list-group-item">
-						  	<a href="#">商品分类</a>
+						  	<a href="listCate.php" target="mainFrame">分类列表</a>
 						  </li>
 						</ul>
 					  </li>
