@@ -1,3 +1,11 @@
+<?php
+  require_once "../include.php";
+  checkLog();
+  $rows=getAllCate();
+  if(!$rows){
+    echo "<script>alert('没有分类请先添加！');window.location='addCate.php';</script>";
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +14,13 @@
   <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css">
   <link rel="stylesheet" href="../plugins/kindeditor/themes/default/default.css" />
   <link rel="stylesheet" href="../plugins/kindeditor/plugins/code/prettify.css" />
+  <link rel="stylesheet" href="styles/addProduct.css" />
   <script charset="utf-8" src="../plugins/kindeditor/kindeditor-all.js"></script>
   <script charset="utf-8" src="../plugins/kindeditor/lang/zh-CN.js"></script>
   <script charset="utf-8" src="../plugins/kindeditor/plugins/code/prettify.js"></script>
   <script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
   <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="scripts/addProduct.js"></script>
 </head>
 <style type="text/css">
   .error{
@@ -23,7 +33,7 @@
   添加分类成功！
 </div>
 <div class="alert alert-danger" role="alert" style="display:none;">
-  添加分类失败！请重试!
+  没有分类，请先添加分类！
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">添加商品</div>
@@ -31,43 +41,42 @@
       <form name="productDeatil">
         <div class="form-group">
           <label>商品名称</label>
-          <input type="text" class="form-control" placeholder="">
+          <input type="text" class="form-control" placeholder="" name="pName">
         </div>
          <div class="form-group">
           <label>商品分类</label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select class="form-control" name="cId">
+           <?php foreach ($rows as $row):?>
+              <option value="<?php echo $row["id"]?>"><?php echo $row["cName"]?></option>
+           <?php endforeach;?>
           </select>
         </div>
         <div class="form-group">
           <label>商品货号</label>
-          <input type="text" class="form-control" placeholder="">
+          <input type="text" class="form-control" placeholder="" name="pSn">
         </div>
         <div class="form-group">
           <label>商品数量</label>
-          <input type="text" class="form-control" placeholder="">
+          <input type="text" class="form-control" placeholder="" name="pNum">
         </div>
          <div class="form-group">
           <label>商品市场价</label>
-          <input type="text" class="form-control" placeholder="">
+          <input type="text" class="form-control" placeholder="" name="mPrice">
         </div>
          <div class="form-group">
           <label>商品商城价</label>
-          <input type="text" class="form-control" placeholder="">
+          <input type="text" class="form-control" placeholder="" name="iPrice">
         </div>
         <div class="form-group">
           <label>商品描述</label>
           <textarea class="form-control" rows="5" name="pDes" style="visibility:hidden;"></textarea>
         </div>
         <div class="form-group">
-          <label>商品图片</label>
-          <input type="file" value="添加附件"/>
+          <label>商品图片</label><br>
+          <button type="button" class="btn btn-info" id="selectFileBtn">上传图片</button>
+          <div id="attachList"></div>
         </div>
-        <button type="submit" class="btn btn-primary">确认添加</button>
+        <button type="submit" class="btn btn-primary" style="clear:both;">确认添加</button>
       </form>
       <script>
         KindEditor.ready(function(K) {

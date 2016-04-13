@@ -58,7 +58,7 @@ function delCate($id){
  */
 function getAllCate(){
 	$sql="select id,cName from imooc_cate";
-	$rows=fetchAll($sql);
+	$rows=fetch_all($sql);
 	return $rows;
 }
 
