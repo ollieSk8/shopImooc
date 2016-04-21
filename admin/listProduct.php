@@ -21,7 +21,7 @@
 	</style>
 </head>
 <body>
-	<div class="panel panel-default">
+<div class="panel panel-default">
   <div class="panel-heading">商品列表</div>
   <div class="panel-body">
       <table class="table table-striped">
@@ -42,7 +42,7 @@
 	          <td><?php echo $rows["cName"]?></td>
 	          <td><img src="../image_50/<?php echo $rows["albumPath"]?>"></td>
 	          <td>
-	          	 <button type="button" class="btn btn-primary btn-sm">详情</button>
+	          	 <a href="<?php echo "productDetail.php?id={$i}";?>" class="btn btn-primary btn-sm">详情</a>
 	          	 <button type="button" class="btn btn-primary btn-sm">修改</button>
 	          	 <button type="button" class="btn btn-primary btn-sm">删除</button>
 	          </td>
