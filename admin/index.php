@@ -105,7 +105,29 @@
 						  	<a href="addProduct.php" target="mainFrame">添加商品</a>
 						  </li>
 						   <li class="list-group-item">
-						  	<a href="listAdmin.php" target="mainFrame">商品列表</a>
+						  	<a href="listProduct.php" target="mainFrame">商品列表</a>
+						  </li>
+						</ul>
+					  </li>
+					  <li class="list-group-item" data-hover="hover">
+					  	<span class="glyphicon glyphicon-plus"></span>图片管理
+					  	<ul class="list-group second-menu">
+						  <li class="list-group-item">
+						  	<a href="javaScript:;" target="mainFrame">添加图片</a>
+						  </li>
+						   <li class="list-group-item">
+						  	<a href="javaScript:;" target="mainFrame">图片列表</a>
+						  </li>
+						</ul>
+					  </li>
+					  <li class="list-group-item" data-hover="hover">
+					  	<span class="glyphicon glyphicon-plus"></span>用户管理
+					  	<ul class="list-group second-menu">
+						  <li class="list-group-item">
+						  	<a href="javaScript:;" target="mainFrame">添加用户</a>
+						  </li>
+						   <li class="list-group-item">
+						  	<a href="javaScript:;" target="mainFrame">用户列表</a>
 						  </li>
 						</ul>
 					  </li>

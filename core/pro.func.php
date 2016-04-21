@@ -24,7 +24,7 @@ function addPro(){
 			$arr1['albumPath']=$uploadFile['name'];
 			addAlbum($arr1);
 		}
-		$mes="<p>添加成功!</p><a href='addPro.php' target='mainFrame'>继续添加</a>|<a href='listPro.php' target='mainFrame'>查看商品列表</a>";
+		$mes="<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"./styles/bootstrap.min.css\"></head></html><body><div class=\"alert alert-success\" role=\"alert\">添加成功!</div><a href=\"addProduct.php\" target=\"mainFrame\">继续添加</a>&nbsp;|&nbsp;<a href=\"listProduct.php\" target=\"mainFrame\">查看商品列表</a></body>";
 	}else{
 		foreach($uploadFiles as $uploadFile){
 			if(file_exists("../image_800/".$uploadFile['name'])){
@@ -40,7 +40,7 @@ function addPro(){
 				unlink("../image_350/".$uploadFile['name']);
 			}
 		}
-		$mes="<p>添加失败!</p><a href='addPro.php' target='mainFrame'>重新添加</a>";
+		$mes="<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"./styles/bootstrap.min.css\"></head></html><body><div class=\"alert alert-danger\" role=\"alert\">添加失败!</div><a href=\"addProduct.php\" target=\"mainFrame\">重新添加</a></body>";
 		
 	}
 	return $mes;

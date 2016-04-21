@@ -20,6 +20,7 @@
   <script charset="utf-8" src="../plugins/kindeditor/plugins/code/prettify.js"></script>
   <script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
   <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
   <script type="text/javascript" src="scripts/addProduct.js"></script>
 </head>
 <style type="text/css">
@@ -30,15 +31,15 @@
 </style>
 <body>
 <div class="alert alert-success" role="alert" style="display:none;">
-  添加分类成功！
+  添加商品成功！
 </div>
 <div class="alert alert-danger" role="alert" style="display:none;">
-  没有分类，请先添加分类！
+  添加商品失败！
 </div>
 <div class="panel panel-default">
   <div class="panel-heading">添加商品</div>
   <div class="panel-body">
-      <form name="productDeatil">
+      <form name="addProduct"  action="doAdminAction.php?act=addPro" method="post" id="addProduct" enctype="multipart/form-data">
         <div class="form-group">
           <label>商品名称</label>
           <input type="text" class="form-control" placeholder="" name="pName">
@@ -69,7 +70,7 @@
         </div>
         <div class="form-group">
           <label>商品描述</label>
-          <textarea class="form-control" rows="5" name="pDes" style="visibility:hidden;"></textarea>
+          <textarea class="form-control" rows="5" name="pDes" id="editor_id" style="visibility:-hidden;"></textarea>
         </div>
         <div class="form-group">
           <label>商品图片</label><br>
@@ -79,26 +80,29 @@
         <button type="submit" class="btn btn-primary" style="clear:both;">确认添加</button>
       </form>
       <script>
-        KindEditor.ready(function(K) {
-          var editor1 = K.create('textarea[name="pDes"]', {
-            cssPath : '../plugins/kindeditor/plugins/code/prettify.css',
-            uploadJson : '../plugins/kindeditor/php/upload_json.php',
-            fileManagerJson : '../plugins/kindeditor/php/file_manager_json.php',
-            allowFileManager : true,
-            afterCreate : function() {
-              var self = this;
-              K.ctrl(document, 13, function() {
-                self.sync();
-                K('form[name=productDeatil]')[0].submit();
-              });
-              K.ctrl(self.edit.doc, 13, function() {
-                self.sync();
-                K('form[name=productDeatil]')[0].submit();
-              });
-            }
-          });
-          prettyPrint();
-        });
+        // KindEditor.ready(function(K) {
+        //   var editor1 = K.create('textarea[name="pDes"]', {
+        //     cssPath : '../plugins/kindeditor/plugins/code/prettify.css',
+        //     uploadJson : '../plugins/kindeditor/php/upload_json.php',
+        //     fileManagerJson : '../plugins/kindeditor/php/file_manager_json.php',
+        //     allowFileManager : true,
+        //     afterCreate : function() {
+        //       var self = this;
+        //       K.ctrl(document, 13, function() {
+        //         self.sync();
+        //         K('form[name=addProduct]')[0].submit();
+        //       });
+        //       K.ctrl(self.edit.doc, 13, function() {
+        //         self.sync();
+        //         K('form[name=addProduct]')[0].submit();
+        //       });
+        //     }
+        //   });
+        //   prettyPrint();
+        // });
+        //  KindEditor.ready(function(K) {
+        //         window.editor = K.create('#editor_id');
+        // });
       </script>
   </div>
 </div>

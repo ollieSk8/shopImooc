@@ -24,6 +24,7 @@ if($act=="logout"){
 	$mes=delCate($id);
 }elseif($act=="addPro"){
 	$mes=addPro();
+	echo $mes;
 }elseif($act=="editPro"){
 	$mes=editPro($id);
 }elseif($act=="delPro"){

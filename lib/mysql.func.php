@@ -51,6 +51,7 @@
 	}
 	//查找所有记录
 	function fetch_all($sql,$result_type=MYSQL_ASSOC){
+
 		$result=mysql_query($sql);
 		if($result === FALSE) { 
 		    die(mysql_error());
@@ -65,4 +66,12 @@
 		$result=mysql_query($sql);
 		return mysql_num_rows($result);
 	}
+	/**
+	 * 得到上一步插入记录的ID号
+	 * @return number
+	 */
+	function getInsertId(){
+		return mysql_insert_id();
+	}
+
 ?>

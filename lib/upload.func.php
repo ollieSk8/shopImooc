@@ -5,6 +5,7 @@
  * @return array
  */
 function buildInfo(){
+	//var_dump($_FILES);
 	if(!$_FILES){
 		return ;
 	}
@@ -28,8 +29,6 @@ function buildInfo(){
 	}
 	return $files;
 }
-
-
 function uploadFile($path="uploads",$allowExt=array("gif","jpeg","png","jpg","wbmp"),$maxSize=2097152,$imgFlag=true){
 	if(!file_exists($path)){
 		mkdir($path,0777,true);

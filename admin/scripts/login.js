@@ -5,6 +5,12 @@
 		login_btn.on('click',function(){
 			getFormData();
 		});
+		login_btn.keyup(function (event) {
+		    var keycode = event.which;
+		    if (keycode == 13) {
+		        getFormData();
+		    }
+		 });
 		//点击验证码
 		var verificationCode_img=$('.verificationCode-img img');
 		verificationCode_img.on('click',function(){
